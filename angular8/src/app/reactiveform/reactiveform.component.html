@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded py-5">
+            
+            <form [formGroup]="myRectiveForm" class="form" (ngSubmit)="onSubmit()">
+                <h3 style="text-align: center;">Reactive Form</h3>
+                <div formGroupName="userdetails">
+                    <div class="form-group">
+                        <label for="username">Enter Username</label>
+                        <input type="text" class="form-control" name="" id="username" formControlName="username"
+                            placeholder="Enter name">
+                        <small class="text-danger"
+                            *ngIf="!myRectiveForm.get('userdetails.username').valid && myRectiveForm.get('userdetails.username').touched">
+                            <small class="text-danger"
+                                *ngIf="myRectiveForm.get('userdetails.username').errors['required']">please enter
+                                username</small>
+
+                            <small class="text-danger"
+                                *ngIf="myRectiveForm.get('userdetails.username').errors['namesNotAllowed']">user name is
+                                not allowed {{myRectiveForm.get('userdetails.username').value}}</small>
+                        </small>
+
+                    </div>
+                    <div class="from-group">
+                        <label for="email">Enter Email</label>
+                        <input type="email" class="form-control" name="" id="email " formControlName="email"
+                            placeholder="Enter email">
+                        <!-- custom validation -->
+                        <small class="text-danger"
+                            *ngIf="!myRectiveForm.get('userdetails.email').valid && myRectiveForm.get('userdetails.email').touched">
+                            <small class="text-danger"
+                                *ngIf="myRectiveForm.get('userdetails.email').errors['emailNotAllowed']">Email not
+                                allowed {{myRectiveForm.get('userdetails.email').value}}</small>
+                        </small>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="course">select course</label>
+                    <select class="form-control" id="course" formControlName="course">
+                        <option value="Angular">Angular</option>
+                        <option value="Html">Html</option>
+                        <option value="Java">Java</option>
+                    </select>
+                </div>
+                <div class="form-group" formArrayName="skills">
+                    <label>Skills</label>
+                    <ng-container *ngFor="let skill of this.myRectiveForm.get('skills').controls; index as i">
+                        <input type="text" class="form-control mt-2" formControlName="{{i}}" placeholder="Add skill">
+                        <button type="button"(click)="removeskill(i)" mt-2 class="btn btn-danger">remove</button>
+                    </ng-container>
+                    <button class="btn btn-light btn-sm  mt-2 btn-add" (click)="OnAddskill()"><i>+</i>Add skill</button>
+                    
+                </div>
+                <div class="form-group">
+                    <label for="gender">select gender</label>
+                    <div class="custom-contrl custom-redio" *ngFor="let gender of genders">
+
+                        <input type="radio" class="custom-control-input" id="{{gender.id}}" value="{{gender.value}}"
+                            formControlName="gender">
+                        <label for="{{gender.id}}">{{gender.value}}</label>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary mt-2">submit</button>
+                </div>
+            </form>
+            <div class="row-justify-content-center mt-2" *ngIf="submitted">
+                <div class="col-md-6 rounded-shadow py-4">
+                    <ul>
+                        <p><strong> Reactive Form Data</strong></p>
+                        <li>username:<strong>{{myRectiveForm.get('userdetails.username').value}}</strong></li>
+                        <li>emali:<strong>{{myRectiveForm.get('userdetails.email').value}}</strong></li>
+                        <li>course:<strong>{{myRectiveForm.get('course').value}}</strong></li>
+                        <li>gender:<strong>{{myRectiveForm.get('gender').value}}</strong></li>
+                        <li>skill:<strong>{{myRectiveForm.get('skills').value}}</strong></li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

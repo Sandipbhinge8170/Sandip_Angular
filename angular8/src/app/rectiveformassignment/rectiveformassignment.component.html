@@ -1,0 +1,100 @@
+<div class="cointainer">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded py-5">
+            <h2 style="text-align: center;"><strong>Reactive Form</strong></h2>
+            <form [formGroup]="myForm" (ngSubmit)="OnSubmit()" class="form">
+               
+                <div class="form-group">
+                    <label for="firstname"><strong>Enter Firstname</strong></label>
+                    <input type="text" class="form-control" name="" id="firstname" formControlName="firstname" placeholder="Firstname">
+                    <small  class="text-danger" *ngIf="!myForm.get('firstname').valid && myForm.get('firstname').touched">
+                    <small class="text-danger" *ngIf="myForm.get('firstname').errors['required']">please enter username</small>
+                    <small class="text-danger" *ngIf="myForm.get('firstname').errors.minlength">please enter minimum 5 charactor</small>
+                    <small class="text-danger" *ngIf="myForm.get('firstname').errors.maxlength">please enter maximum 5 charactor</small>
+                </small>
+
+                </div>
+        
+
+                <div class="form-group">
+                    <label for="lastname"><strong>Enter Lastname</strong></label>
+                    <input type="text" class="form-control" name="" id="lastname" formControlName="lastname"placeholder="Lastname">
+                    <!-- <small  class="text-danger" *ngIf="!myForm.get('lastname').valid && myForm.get('lastname').touched">
+                        <small class="text-danger" *ngIf="myForm.get('lastname').errors['required']">please enter username</small> -->
+                        <small class="text-danger" *ngIf="myForm.get('lastname').errors.maxlength">please enter maximum 10 charactor</small>
+                    <!-- </small> -->
+                </div>
+
+                <div class="form-group">
+                    <label for=" Enter age"><strong>Enter Age</strong></label>
+                    <input type="number" class="form-control" id="age" formControlName="age" placeholder="Age">
+                    <small  class="text-danger" *ngIf="!myForm.get('age').valid && myForm.get('age').touched">
+                        <small class="text-danger" *ngIf="myForm.get('age').errors['required']">please enter age</small>
+                        
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="email"><strong>Enter Email</strong></label>
+                    <input type="email" class="form-control" id="email" formControlName="email"placeholder="Email">
+                    <small  class="text-danger" *ngIf="!myForm.get('email').valid && myForm.get('email').touched">please enter email</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="number">Enter Number</label>
+                    <input type="number" class="form-control" id="number" formControlName="number" placeholder="Number">
+                    <small  class="text-danger" *ngIf="!myForm.get('number').valid && myForm.get('number').touched">
+                    <small class="text-danger" *ngIf="myForm.get('number').errors.pattern">please enter 10 digit mo no</small>
+                    
+                    </small>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="city"><strong>select city</strong></label>
+                    <select class="form-control" id="city" formControlName="city">
+                        <option value="pune">Pune</option>
+                        <option value="mumbia">Mumbia</option>
+                        <option value="delhi">Raygad</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label for="password"><strong>Enter password</strong></label>
+                    <input type="password" class="form-control" id="password"  formControlName="password" placeholder="Password">
+                    <small  class="text-danger" *ngIf="!myForm.get('password').valid && myForm.get('password').touched">
+                    <small class="text-danger" *ngIf="myForm.get('password').errors['required']">please enter password</small>
+                    <small class="text-danger" *ngIf="myForm.get('password').errors.minlength">please enter atlist 6 charactor</small>
+             </small>
+            </div>
+            <div class="form-group">
+                <label for="confirmpassword"><strong>Enter password</strong></label>
+                <input type="password" class="form-control" id="confirmpassword"  formControlName="confirmpassword" placeholder="confirm Password">
+                <small  class="text-danger" *ngIf="!myForm.get('confirmpassword').valid && myForm.get('confirmpassword').touched">
+                <small class="text-danger" *ngIf="myForm.get('confirmpassword').errors['required']">please enter confirm password</small>
+                <small class="text-danger" *ngIf="myForm.get('confirmpassword').errors.MustMatch">confirm password did not match</small>
+                
+            </small>
+
+            </div>
+
+
+
+                 <div class="form-group">
+                    <label for="gender"><strong>gender</strong></label>
+                    <div class="custom-contrl custom-redio" *ngFor="let gender of genders">
+                    
+                       <input type="radio" class="custom-control-input" id="{{gender.id}}" value="{{gender.value}}" formControlName="gender">
+                  <label for="{{gender.id}}">{{gender.value}}</label>
+                    </div>
+                </div>
+
+                <button class="btn btn-success mt-4">Submit</button> 
+
+                
+             </form> 
+
+    </div>
+</div>
+
+</div>

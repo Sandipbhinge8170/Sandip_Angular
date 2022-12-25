@@ -1,0 +1,17 @@
+<!-- <p>attribute works!</p> -->
+<div [ngStyle]="{'color':colorval,'background-color':'#ddd'}">
+    larning angular 8
+</div>
+
+<h4>ng class</h4>
+<ul *ngFor=" let person of people">
+    <li [ngClass]="{
+        'text-success':person.country ==='india',
+        'text-danger':person.country ==='UK'
+    }">
+{{person.name}} ({{person.country}})
+</li>
+</ul>
+
+<p>Normla para</p>
+<p appCustomdir> custom para</p>

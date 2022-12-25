@@ -1,0 +1,14 @@
+input.ng-invalid.ng-touched{
+    border: 1px solid red;
+    box-shadow: 0 0 13px #ff000021;
+}
+/* .cointainer{
+    background-image: url("/assets/images/maxresdefault.jpg");
+ background-repeat: no-repeat;
+ background-size: cover;
+} */
+.form{
+    background-color:azure;
+    border: 1px solid black;
+   
+}

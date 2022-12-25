@@ -1,0 +1,17 @@
+.container{
+     /* background-size: 100%; */
+    background-image:url("/assets/images/joanna-kosinska-1_CMoFsPfso-unsplash.jpg");
+    border: solid black 3px;
+    /* width: 100px; */
+    block-size: 521px;
+
+
+
+    /* background-image: url("/assets/images/joanna-kosinska-1_CMoFsPfso-unsplash.jpg");
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative; */
+}

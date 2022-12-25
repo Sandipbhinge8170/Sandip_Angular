@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded py-5">
+            <form [formGroup]="myRectiveForm" (ngSubmit)="onSubmit()">
+                <h4 style="text-align: center;"> Emplyee Form</h4>
+                <div class="form-group">
+                    <label for="firstname">Enter First Name</label>
+                    <input type="text" class="form-control"  id="firstname" formControlName="firstname" placeholder="Enter First Name">  
+                    <small  class="text-danger" *ngIf="!myRectiveForm.get('firstname').valid && myRectiveForm.get('firstname').touched">
+                        please enter firstname
+                    </small>
+                    
+               </div>
+               <div class="form-group">
+                <label for="lastname">Enter Last Name</label>
+                <input type="text" class="form-control"  id="lastname" formControlName="lastname" placeholder="Enter Last Name">  
+                <small  class="text-danger" *ngIf="!myRectiveForm.get('lastname').valid && myRectiveForm.get('lastname').touched">
+                    please enter lastname
+                </small>
+                
+           </div>
+
+                <div class="from-group">
+                    <label for="email">Enter Email</label>
+                    <input type="email" class="form-control" name="" id="email " formControlName="email" placeholder="Enter Email">
+                    <!-- custom validation -->
+                <small  class="text-danger" *ngIf="!myRectiveForm.get('email').valid && myRectiveForm.get('email').touched">please enter valid email</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Enter Mobile Number</label>
+                    <input type="tel"  class="form-control" id="phone" formControlName="phone" placeholder="Enter Mobile Number ">  
+                    <small  class="text-danger" *ngIf="!myRectiveForm.get('phone').valid && myRectiveForm.get('phone').touched">
+                        please enter mobile number
+                    </small>
+                    
+               </div>
+
+                <div class="form-group">
+                    <label for="status">select status</label>
+                    <select class="form-control"  id="status" formControlName="status">
+                        <option value="Pending">Pending</option>
+                        <option value="Approved">Approved</option>
+                        <option value="Rejected">Rejected</option>
+                    </select>
+                    
+                </div>
+
+                <div class="form-group">
+                    <label for="city">Select City</label>
+                    <select class="form-control"  id="city" formControlName="city">
+                        <option value="Solapur">Solapur</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Mumbai">Mumbai</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Select Country</label>
+                    <select class="form-control"  id="country" formControlName="country">
+                        <option value="India">India</option>
+                        <option value="Uk">Uk</option>
+                        <option value="Usa">Usa</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="state">Select State</label>
+                    <select class="form-control"  id="state" formControlName="state">
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Karnataka">Karnataka</option>
+                        <option value="Delhi">Delhi</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Plase Select Date</label>
+                    <input type="date" class="form-control" formControlName="date" id="date">
+                  </div>
+
+                  <div class="form-group">
+                    <label for="password"><strong>password</strong></label>
+                    <input type="password"  class="form-control" id="password" formControlName="password" placeholder="Enter Password">
+                    <small  class="text-danger" *ngIf="!myRectiveForm.get('password').valid && myRectiveForm.get('password').touched">
+                        Password must contain more than 8 characters, 1 upper case letter, and 1
+                        special character
+                    </small>
+                     
+                </div>
+                
+                
+
+                 <button class="btn btn-success mt-4">Submit</button> 
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-left rounded shadow py-5">
+        <form (ngSubmit)="OnSubmit(myForm)" #myForm="ngForm">
+           <div><h3 style="text-align: center;">Simple Form</h3></div>
+
+           <div ngModelGroup="userDetails" #userDetails="ngModelGroup">
+            <div class="form-group">
+                <label for="Username">Username</label>
+                <input type="text" class="form-control" id="Username" name="Username" placeholder="Enter user name" [(ngModel)]="Username" required>
+                <small *ngIf="Username">User name is:{{Username}}</small>
+              </div>
+
+            
+              <div class="form-group">
+                <label for="email">Email Id</label>
+                <input type="email" class="form-control" id="email" #email="ngModel" email name="email" placeholder="Enter email" ngModel  required>
+                <small *ngIf="!email.valid && email.touched">Enter Valid Email</small>
+              </div>
+
+              <div class="form-group">
+                <label for="address">Enter address</label>
+                <input type="address" class="form-control" id="address" name="address" placeholder="Enter address" ngModel required>
+              </div>
+              <small *ngIf="!userDetails.valid && userDetails.touched">Enter valid details</small>
+            </div>
+
+              <div class="form-group">
+                <label for="course">select course</label>
+                <select class="form-control" name="course" id="course" [ngModel]="defaultValue" >
+                    <option value="Angular">Angular</option>
+                    <option value="Html">Html</option>
+                    <option value="Java">Java</option>
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="date">Plase Select Date</label>
+              <input type="date" name="date" id="date">
+            </div>
+            
+
+              <div class="form-group">
+                <label for="Radio">Grender</label>
+                <div *ngFor="let gender of gender"  class="custom-control Custom-radio">
+
+                <input type="radio" name="gender" id="{{gender.id}}" value="{{gender.value}}" [ngModel]="defaultGender" class="custom-control-input">
+                <label for="{{gender.id}}" class="custom-control-label">{{gender.value}}</label>
+                </div>
+              
+              </div>
+
+              <button class="submit" type="submit" class="btn btn-primary">Submit</button>  
+                <input class="btn btn-primary" type="reset" value="Reset" style="margin-left:150px"> 
+
+                 <div class="row justify-content-center mt-1"  *ngIf="submitted">
+                  <div class="col-md-6 rounded shadow py-5">
+                    <h3>Form data</h3>
+                    <p>Username: <strong>{{employee.Username}}</strong></p>
+                    <p>email: <strong>{{employee.email}}</strong></p>
+                    <p>address: <strong>{{employee.address}}</strong></p>
+                    <p>course: <strong>{{employee.course}}</strong></p>
+                    <p>gender: <strong>{{employee.gender}}</strong></p>
+                  </div>
+
+                 </div>
+            
+
+        </form>
+    </div>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+<p>assdatabinding works!</p>
+<div>
+    <input type="text" [(ngModel)]="username" style="background-color: aqua;"><br><br>
+   <input type="text" [(ngModel)]="password" >
+</div>
+<p>{{username}}</p>
+<p>{{password}}</p>
+
+<button [disabled]="!username" (click)="onclick()">reset</button>
+<p appCustomdir>hi i am sachin</p>

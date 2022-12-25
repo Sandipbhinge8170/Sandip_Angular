@@ -1,0 +1,29 @@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>phone Number</th>
+            <th>Username</th>
+            <th>Website</th>
+            <th>Address</th>
+            <th>Company</th>
+            
+         </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of userData">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.phone}}</td>
+            <td>{{user.username}}</td>
+            <td>{{user.website}}</td>
+            <td>{{user.address}} </td>
+           
+            <td>{{user.company.bs}}- {{user.company.catchPhrase}}</td>
+        </tr>
+    </tbody>
+</table>

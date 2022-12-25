@@ -1,0 +1,13 @@
+<!-- <p>successalert works!</p> -->
+<div class="div">
+    <h2>{{name}}</h2>
+</div>
+<h3>server with is {{Id}} is {{getStatus()}}</h3>
+
+<button [disabled]="!allow" class="btn btn-primary" (click)="onclick()">Add server</button>
+<!-- <img [src]="imgurl"> -->
+<div>{{server}}</div>
+<div>
+    <input type="text"[(ngModel)]="serverName">
+</div>
+{{serverName}}

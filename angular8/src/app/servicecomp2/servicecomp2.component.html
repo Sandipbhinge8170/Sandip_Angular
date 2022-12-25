@@ -1,0 +1,18 @@
+<!-- <p>servicecomp2 works!</p>
+
+<button (click)="onSubmit()">Submit</button> -->
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>ID</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productss">
+            <td>{{product.name}}</td>
+            <td>{{product.id}}</td>
+        </tr>
+    </tbody>
+</table>
