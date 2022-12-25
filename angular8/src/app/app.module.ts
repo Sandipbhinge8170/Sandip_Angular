@@ -39,6 +39,7 @@ import { RcontactusComponent } from './rcontactus/rcontactus.component';
 import { RproductsComponent } from './rproducts/rproducts.component';
 import { RhomeComponent } from './rhome/rhome.component';
 import { RloginComponent } from './rlogin/rlogin.component';
+import { DemoComponent } from './demo/demo.component';
 
 
 
@@ -81,6 +82,7 @@ import { RloginComponent } from './rlogin/rlogin.component';
     RproductsComponent,
     RhomeComponent,
     RloginComponent,
+    DemoComponent,
 
    
 
