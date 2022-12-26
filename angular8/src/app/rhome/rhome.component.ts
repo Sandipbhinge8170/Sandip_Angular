@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./rhome.component.css']
 })
 export class RhomeComponent implements OnInit {
+ 
 
   constructor() { }
 

@@ -40,6 +40,14 @@ import { RproductsComponent } from './rproducts/rproducts.component';
 import { RhomeComponent } from './rhome/rhome.component';
 import { RloginComponent } from './rlogin/rlogin.component';
 import { DemoComponent } from './demo/demo.component';
+import { LoginComponent } from './login/login.component';
+import { Login1Component } from './login1/login1.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { LaptopComponent } from './rproducts/laptop/laptop.component';
+import { TvComponent } from './rproducts/tv/tv.component';
+import { TabletComponent } from './rproducts/tablet/tablet.component';
+import { WashingmachinComponent } from './rproducts/washingmachin/washingmachin.component';
+
 
 
 
@@ -83,6 +91,14 @@ import { DemoComponent } from './demo/demo.component';
     RhomeComponent,
     RloginComponent,
     DemoComponent,
+    LoginComponent,
+    Login1Component,
+    PagenotfoundComponent,
+    LaptopComponent,
+    TvComponent,
+    TabletComponent,
+    WashingmachinComponent,
+
 
    
 
