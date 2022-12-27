@@ -47,6 +47,8 @@ import { LaptopComponent } from './rproducts/laptop/laptop.component';
 import { TvComponent } from './rproducts/tv/tv.component';
 import { TabletComponent } from './rproducts/tablet/tablet.component';
 import { WashingmachinComponent } from './rproducts/washingmachin/washingmachin.component';
+import { DemopostComponent } from './demopost/demopost.component';
+import { PostdetailsComponent } from './postdetails/postdetails.component';
 
 
 
@@ -98,6 +100,8 @@ import { WashingmachinComponent } from './rproducts/washingmachin/washingmachin.
     TvComponent,
     TabletComponent,
     WashingmachinComponent,
+    DemopostComponent,
+    PostdetailsComponent,
 
 
    

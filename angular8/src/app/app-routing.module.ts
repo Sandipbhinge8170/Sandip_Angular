@@ -1,7 +1,11 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { post } from 'jquery';
+import { DemoComponent } from './demo/demo.component';
+import { DemopostComponent } from './demopost/demopost.component';
 
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { PostdetailsComponent } from './postdetails/postdetails.component';
 import { RaboutusComponent } from './raboutus/raboutus.component';
 import { RcontactusComponent } from './rcontactus/rcontactus.component';
 import { RhomeComponent } from './rhome/rhome.component';
@@ -26,6 +30,11 @@ const routes: Routes = [
     {path:'tv',component:TvComponent},
     {path:'washingmachin',component:WashingmachinComponent}
   ]},
+  {path:'post', component:DemopostComponent},
+
+  //route parametar
+  {path:'postdetails/:id', component:PostdetailsComponent},
+  //when user enter wrong address then it path ** found
   {path:'**',component:PagenotfoundComponent}
 ];
 
