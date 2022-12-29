@@ -47,6 +47,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DemopostComponent } from './demopost/demopost.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
 import { ProductsModule } from './rproducts/products.module';
+import { CarsComponent } from './cars/cars.component';
+
+import { CarsModule } from './models/cars.module';
 
 
 
@@ -97,6 +100,8 @@ import { ProductsModule } from './rproducts/products.module';
     
     DemopostComponent,
     PostdetailsComponent,
+    CarsComponent,
+   
 
 
    
@@ -105,6 +110,7 @@ import { ProductsModule } from './rproducts/products.module';
   ],
   imports: [
     BrowserModule,
+    CarsModule,
     ProductsModule,
     AppRoutingModule,
     FormsModule,
