@@ -11,7 +11,7 @@ import { AssdatabindingComponent } from './assdatabinding/assdatabinding.compone
 import { DemodirectiveComponent } from './demodirective/demodirective.component';
 import { NgswitchComponent } from './ngswitch/ngswitch.component';
 import { AttributeComponent } from './attribute/attribute.component';
-import { CustomdirDirective } from './customdir.directive';
+
 import { TemprefvariableComponent } from './temprefvariable/temprefvariable.component';
 import { ChildComponent } from './child/child.component';
 import { Child1Component } from './child1/child1.component';
@@ -36,19 +36,17 @@ import { FilterpipeComponent } from './filterpipe/filterpipe.component';
 import { FilterPipe } from './filterpipe/pipe/filter.pipe';
 import { RaboutusComponent } from './raboutus/raboutus.component';
 import { RcontactusComponent } from './rcontactus/rcontactus.component';
-import { RproductsComponent } from './rproducts/rproducts.component';
+
 import { RhomeComponent } from './rhome/rhome.component';
 import { RloginComponent } from './rlogin/rlogin.component';
 import { DemoComponent } from './demo/demo.component';
 import { LoginComponent } from './login/login.component';
 import { Login1Component } from './login1/login1.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { LaptopComponent } from './rproducts/laptop/laptop.component';
-import { TvComponent } from './rproducts/tv/tv.component';
-import { TabletComponent } from './rproducts/tablet/tablet.component';
-import { WashingmachinComponent } from './rproducts/washingmachin/washingmachin.component';
+
 import { DemopostComponent } from './demopost/demopost.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
+import { ProductsModule } from './rproducts/products.module';
 
 
 
@@ -64,7 +62,7 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
     DemodirectiveComponent,
     NgswitchComponent,
     AttributeComponent,
-    CustomdirDirective,
+   
     TemprefvariableComponent,
     ChildComponent,
     Child1Component,
@@ -89,17 +87,14 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
     FilterPipe,
     RaboutusComponent,
     RcontactusComponent,
-    RproductsComponent,
+ 
     RhomeComponent,
     RloginComponent,
     DemoComponent,
     LoginComponent,
     Login1Component,
     PagenotfoundComponent,
-    LaptopComponent,
-    TvComponent,
-    TabletComponent,
-    WashingmachinComponent,
+    
     DemopostComponent,
     PostdetailsComponent,
 
@@ -110,10 +105,12 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
   ],
   imports: [
     BrowserModule,
+    ProductsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
