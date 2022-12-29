@@ -9,7 +9,7 @@ import { RproductsComponent } from './rproducts.component';
 import { UtilityModule } from '../models/sharedModule/utility.module';
 
 const proudRoutes : Routes = [
-  {path:'rproducts', component: RproductsComponent, children:[
+  {path:'', component: RproductsComponent, children:[
     {path:'laptop',component:LaptopComponent},
     {path:'tablet',component:TabletComponent},
     {path:'tv',component:TvComponent},
@@ -34,4 +34,9 @@ const proudRoutes : Routes = [
     RouterModule
   ]
 })
-export class ProductsModule { }
+export class ProductsModule { 
+  constructor(){
+    console.log("product module load");
+    
+  }
+}

@@ -7,7 +7,7 @@ import { OudiComponent } from 'src/app/cars/oudi/oudi.component';
 
 
 const cars : Routes =[
-  {path:'cars',component:CarsComponent,children:[
+  {path:'',component:CarsComponent,children:[
     {path:'bmw',component:BmwComponent},
     {path:'oudi',component:OudiComponent}
   ]},
@@ -16,15 +16,20 @@ const cars : Routes =[
 
 @NgModule({
   declarations: [
+      
     BmwComponent,
     OudiComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(cars)
-  ],
+    RouterModule.forChild(cars)],
   exports :[
     RouterModule
   ]
 })
-export class CarsModule { }
+export class CarsModule { 
+  constructor(){
+    console.log("cars module load");
+    
+  }
+}

@@ -46,15 +46,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 import { DemopostComponent } from './demopost/demopost.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
-import { ProductsModule } from './rproducts/products.module';
+
 import { CarsComponent } from './cars/cars.component';
-
-import { CarsModule } from './models/cars.module';
-
-
-
-
-
 
 @NgModule({
   declarations: [
@@ -100,19 +93,12 @@ import { CarsModule } from './models/cars.module';
     
     DemopostComponent,
     PostdetailsComponent,
-    CarsComponent,
-   
-
-
-   
-
+    CarsComponent
    
   ],
   imports: [
     BrowserModule,
-    CarsModule,
-    ProductsModule,
-    AppRoutingModule,
+   AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
@@ -121,4 +107,10 @@ import { CarsModule } from './models/cars.module';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(){
+    console.log("app module loadied");
+    
+  }
+  
+ }

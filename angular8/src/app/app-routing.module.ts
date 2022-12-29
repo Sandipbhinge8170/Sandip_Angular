@@ -23,8 +23,15 @@ const routes: Routes = [
   
   {path:'post', component:DemopostComponent},
 
-  //route parametar
+  //route parametar find by id
   {path:'postdetails/:id', component:PostdetailsComponent},
+
+//lazy loading syntax
+//folder-name->loadchildern->folder-name->module-name#module class name
+{path:'rproducts',loadChildren:'./rproducts/products.module#ProductsModule'},
+{path:'cars',loadChildren:'./cars/cars.module#CarsModule'},
+{path:'orders',loadChildren:'./orders/orders.module#OrdersModule'},
+
   //when user enter wrong address then it path ** found
   {path:'**',component:PagenotfoundComponent}
 ];
@@ -54,4 +61,9 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  constructor(){
+    console.log("approuting module load");
+    
+  }
+ }
