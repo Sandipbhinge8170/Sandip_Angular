@@ -36,7 +36,9 @@
     </option>
 </select>-->
 
-  <!-- <app-hooks [userId]="uid"></app-hooks>  -->
+  <!-- <app-hooks *ngIf="appchildExits" [userId]="uid"></app-hooks> 
+ OnDistroy remove button
+<button class="btn btn-danger" (click)="destroy()">Distroy component</button> -->
 
 <!-- <app-simpletempform></app-simpletempform> -->
 <!-- <app-templetform></app-templetform> -->
@@ -74,6 +76,8 @@
  </header>
 <!-- <app-login></app-login> -->
 <!-- <app-login1></app-login1> -->
+
+
 <router-outlet></router-outlet>
 
 

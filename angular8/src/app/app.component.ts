@@ -9,6 +9,11 @@ export class AppComponent  {
 
   
 
+//ngOnDistroy
+appchildExits:boolean=true;
+destroy(){
+  this.appchildExits=false;
+}
 
 
   public uid:number;
