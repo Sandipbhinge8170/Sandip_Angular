@@ -16,7 +16,7 @@ const cars : Routes =[
 
 @NgModule({
   declarations: [
-      
+    CarsComponent,  
     BmwComponent,
     OudiComponent
   ],

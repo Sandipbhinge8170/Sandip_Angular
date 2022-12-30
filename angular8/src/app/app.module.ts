@@ -47,7 +47,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DemopostComponent } from './demopost/demopost.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
 
-import { CarsComponent } from './cars/cars.component';
+//import { CarsComponent } from './cars/cars.component';
+//import { CarsModule } from './cars/cars.module';
 
 @NgModule({
   declarations: [
@@ -93,13 +94,14 @@ import { CarsComponent } from './cars/cars.component';
     
     DemopostComponent,
     PostdetailsComponent,
-    CarsComponent
+    //CarsComponent
    
   ],
   imports: [
     BrowserModule,
    AppRoutingModule,
     FormsModule,
+    //CarsModule,
     ReactiveFormsModule,
     HttpClientModule,
     
