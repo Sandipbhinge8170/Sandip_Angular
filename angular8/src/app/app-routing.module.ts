@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AddUserComponent } from './add-user/add-user.component';
+import { AunsavedchangesGuard } from './aunsavedchanges.guard';
 import { AuthGuard } from './auth.guard';
 
 
@@ -33,6 +35,7 @@ const routes: Routes = [
 {path:'rproducts',canActivate:[AuthGuard],  loadChildren:'./rproducts/products.module#ProductsModule'},
 {path:'cars',loadChildren:'./cars/cars.module#CarsModule'},
 {path:'orders',loadChildren:'./orders/orders.module#OrdersModule'},
+{path:'add-user',component:AddUserComponent,canDeactivate:[AunsavedchangesGuard]},
 
   //when user enter wrong address then it path ** found
   {path:'**',component:PagenotfoundComponent}
