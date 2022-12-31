@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-rlogin',
@@ -10,21 +11,20 @@ import { Router } from '@angular/router';
 export class RloginComponent implements OnInit {
   
 
-  constructor(private _rout:Router) { }
+  constructor(private _rout:Router,private _authService:AuthService) { }
 
   ngOnInit() {
   }
 
-  checkUser(uname,pwd){
-if(uname== 'admin' && pwd== 'admin'){
-
-this._rout.navigate(['rproducts/laptop'])
-
-}
-else
-{
-  alert('Hello Enter Correct Email And Password');
-}
+  checkUser(uname,password){
+  var output=this._authService.checkUserNamePassword(uname,password);
+  if(output==true){
+    window.alert('login succesfully');
+    this._rout.navigate(['rproducts'])
+  }else{
+    window.alert('invalied username and password')
   }
+}
+  
   
 }

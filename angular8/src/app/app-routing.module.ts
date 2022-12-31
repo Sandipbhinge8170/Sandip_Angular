@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth.guard';
 
 
 import { DemopostComponent } from './demopost/demopost.component';
@@ -28,7 +29,8 @@ const routes: Routes = [
 
 //lazy loading syntax
 //folder-name->loadchildern->folder-name->module-name#module class name
-{path:'rproducts',loadChildren:'./rproducts/products.module#ProductsModule'},
+
+{path:'rproducts',canActivate:[AuthGuard],  loadChildren:'./rproducts/products.module#ProductsModule'},
 {path:'cars',loadChildren:'./cars/cars.module#CarsModule'},
 {path:'orders',loadChildren:'./orders/orders.module#OrdersModule'},
 

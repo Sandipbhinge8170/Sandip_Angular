@@ -46,6 +46,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 import { DemopostComponent } from './demopost/demopost.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 //import { CarsComponent } from './cars/cars.component';
 //import { CarsModule } from './cars/cars.module';
@@ -94,6 +95,7 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
     
     DemopostComponent,
     PostdetailsComponent,
+    AddUserComponent,
     //CarsComponent
    
   ],
