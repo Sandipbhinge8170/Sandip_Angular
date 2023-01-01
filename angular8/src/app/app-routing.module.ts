@@ -24,17 +24,18 @@ const routes: Routes = [
   {path:'rcontactus', component:RcontactusComponent},
   //nested  <router-outlet></router-outlet>
   
-  {path:'post', component:DemopostComponent},
+  {path:'post',canActivate:[AuthGuard], component:DemopostComponent},
 
   //route parametar find by id
   {path:'postdetails/:id', component:PostdetailsComponent},
 
 //lazy loading syntax
 //folder-name->loadchildern->folder-name->module-name#module class name
-
-{path:'rproducts',canActivate:[AuthGuard],  loadChildren:'./rproducts/products.module#ProductsModule'},
 {path:'cars',loadChildren:'./cars/cars.module#CarsModule'},
 {path:'orders',loadChildren:'./orders/orders.module#OrdersModule'},
+
+//canActivate,canDeactivate guard syntex
+{path:'rproducts',canActivate:[AuthGuard],  loadChildren:'./rproducts/products.module#ProductsModule'},
 {path:'add-user',component:AddUserComponent,canDeactivate:[AunsavedchangesGuard]},
 
   //when user enter wrong address then it path ** found

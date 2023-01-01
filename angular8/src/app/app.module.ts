@@ -47,6 +47,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { DemopostComponent } from './demopost/demopost.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
 import { AddUserComponent } from './add-user/add-user.component';
+import { RapidapiComponent } from './rapidapi/rapidapi.component';
 
 //import { CarsComponent } from './cars/cars.component';
 //import { CarsModule } from './cars/cars.module';
@@ -96,6 +97,7 @@ import { AddUserComponent } from './add-user/add-user.component';
     DemopostComponent,
     PostdetailsComponent,
     AddUserComponent,
+    RapidapiComponent,
     //CarsComponent
    
   ],

@@ -1,0 +1,31 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>Card</th>
+        <th> country</th>
+        <th>currency</th>
+        <th>id</th>
+        <th>name</th>
+        <th>region</th>
+        <th>resourceId</th>
+        <th>resourceSubtype</th>
+        <th>resourceType</th>
+        <th>securityType</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of news">
+        <td>{{data.card}}</td>
+        <td>{{data.country}}</td>
+        <td>{{data.currency}}</td>
+        <td>{{data.id}}</td>
+        <td>{{data.name}}</td>
+        <td>{{data.region}}</td>
+        <td>{{data.resourceId}}</td>
+        <td>{{data.resourceSubtype}}</td>
+        <td>{{data.resourceType}}</td>
+        <td>{{data.securityType}}</td>
+         <tr>
+    </tbody>
+  </table>
+  

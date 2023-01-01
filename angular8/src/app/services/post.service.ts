@@ -17,5 +17,9 @@ getPost():Observable<any>{
 getPostByid(id):Observable<any>{
  return this._httpClient.get(`${devAPIUrl}posts/` +id);
 }
+
+deletePostById(id){
+return this._httpClient.delete(`${devAPIUrl}posts/` +id)
+}
   
 }

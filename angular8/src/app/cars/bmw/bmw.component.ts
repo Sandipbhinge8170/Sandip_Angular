@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-bmw',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./bmw.component.css']
 })
 export class BmwComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {

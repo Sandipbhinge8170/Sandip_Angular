@@ -8,6 +8,7 @@ import { FormControl } from '@angular/forms';
 })
 export class AddUserComponent implements OnInit {
   userName:FormControl=new FormControl();
+  CarsComponent: any;
   constructor() { }
 
   ngOnInit() {
