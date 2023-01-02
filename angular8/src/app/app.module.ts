@@ -48,6 +48,7 @@ import { DemopostComponent } from './demopost/demopost.component';
 import { PostdetailsComponent } from './postdetails/postdetails.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { RapidapiComponent } from './rapidapi/rapidapi.component';
+import { GetalbumsapiComponent } from './getalbumsapi/getalbumsapi.component';
 
 //import { CarsComponent } from './cars/cars.component';
 //import { CarsModule } from './cars/cars.module';
@@ -98,6 +99,7 @@ import { RapidapiComponent } from './rapidapi/rapidapi.component';
     PostdetailsComponent,
     AddUserComponent,
     RapidapiComponent,
+    GetalbumsapiComponent,
     //CarsComponent
    
   ],

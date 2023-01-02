@@ -12,9 +12,9 @@ export class RapidapiComponent implements OnInit {
 
   ngOnInit() {
     this._rapidapi.getDataFinance().subscribe(res =>{
-      // console.log('rapid api data',res);
-    this.news=res.quote;
-      console.log('data',this.news);
+      console.log('rapid api data',res);
+    // this.news=res.quote;
+    //   console.log('data',this.news);
       
     })
   }
