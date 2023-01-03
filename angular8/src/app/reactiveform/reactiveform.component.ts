@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { firebasepost } from '../models/firebasepost';
+import { FirebaseService } from '../services/firebase.service';
 
 
 
@@ -10,7 +12,7 @@ import { Observable } from 'rxjs';
   styleUrls: ['./reactiveform.component.css']
 })
 export class ReactiveformComponent implements OnInit {
-  
+  Firebasepost:firebasepost;
   submitted:boolean=false;
   myRectiveForm:FormGroup;
   notAllowed=['codemind','technology'];
@@ -27,11 +29,21 @@ export class ReactiveformComponent implements OnInit {
 
   ]
 
-  constructor(private fb:FormBuilder) { 
+  constructor(private fb:FormBuilder,private _firebaseservice:FirebaseService) { 
     this.createForm();
   }
 
   ngOnInit() {
+//get data form getPostDataFirebase
+this._firebaseservice.getPostDataFirebase().subscribe(res=>{
+  console.log('getPostDataFirebase',res);
+  
+})
+
+
+
+
+
 
     //set value validation username and password
     //we can set value two way setvalue and patchvalue
@@ -77,8 +89,8 @@ export class ReactiveformComponent implements OnInit {
 //       ])
 //     })
 
-//using formBuilder
 
+//using formBuilder
 this.myRectiveForm=this.fb.group({
   userdetails:this.fb.group({
     username:['',Validators.required],
@@ -94,7 +106,22 @@ this.myRectiveForm=this.fb.group({
 
   onSubmit(){
     this.submitted = true;
-    console.log(this.myRectiveForm);
+    // console.log(this.myRectiveForm);
+
+
+    
+    //firebase service postData
+    // console.log(this.myRectiveForm['controls'].userdetails['controls'].username.value);
+    this.Firebasepost=new firebasepost();
+    this.Firebasepost.username=this.myRectiveForm['controls'].userdetails['controls'].username.value;
+    this.Firebasepost.email=this.myRectiveForm['controls'].userdetails['controls'].email.value;
+    this.Firebasepost.course=this.myRectiveForm['controls'].course.value;
+    this.Firebasepost.gender=this.myRectiveForm['controls'].gender.value;
+    this.Firebasepost.skills=this.myRectiveForm['controls'].skills.value;
+     this._firebaseservice.createPostDataReactiveForm(this.Firebasepost).subscribe(res=>{
+      console.log("post form reactive form", res);
+      
+     })
     
     
   }

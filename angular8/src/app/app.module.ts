@@ -49,6 +49,7 @@ import { PostdetailsComponent } from './postdetails/postdetails.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { RapidapiComponent } from './rapidapi/rapidapi.component';
 import { GetalbumsapiComponent } from './getalbumsapi/getalbumsapi.component';
+import { FirebasepostapiComponent } from './firebasepostapi/firebasepostapi.component';
 
 //import { CarsComponent } from './cars/cars.component';
 //import { CarsModule } from './cars/cars.module';
@@ -100,6 +101,7 @@ import { GetalbumsapiComponent } from './getalbumsapi/getalbumsapi.component';
     AddUserComponent,
     RapidapiComponent,
     GetalbumsapiComponent,
+    FirebasepostapiComponent,
     //CarsComponent
    
   ],
