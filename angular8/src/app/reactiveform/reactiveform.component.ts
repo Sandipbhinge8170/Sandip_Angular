@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Observable } from 'rxjs';
+
+import { from, interval, Observable } from 'rxjs';
 import { firebasepost } from '../models/firebasepost';
 import { FirebaseService } from '../services/firebase.service';
-
+import { filter, map, take, takeLast, toArray} from 'rxjs/operators';
 
 
 @Component({
@@ -34,13 +35,67 @@ export class ReactiveformComponent implements OnInit {
   }
 
   ngOnInit() {
-//get data form getPostDataFirebase
-this._firebaseservice.getPostDataFirebase().subscribe(res=>{
-  console.log('getPostDataFirebase',res);
+/*get array from firebase service
+form is method to convert array to observable formate
+map() manapulate observable data*/
+// const data = from(this._firebaseservice.users);
+// data.pipe(
+//   map(x => x.name + ' ' + 'data')
+// ).subscribe(res =>{
+//   console.log('res :',res);
+// })
+
+// get data form getPostDataFirebase
+// this._firebaseservice.getPostDataFirebase().subscribe(res=>{
+//   console.log('getPostDataFirebase',res);
+// })
+
+//get data from firebaseservice and manuplet convert to id 
+this._firebaseservice.getPostDataFirebase().pipe(
+  map(responseData => {
+    //empty array
+    const postArray =[];
+    for(const key in responseData){
+      //check key
+      if(responseData.hasOwnProperty(key)){
+        //push new value in to array
+        postArray.push({...responseData[key],id:key})
+      }
+    }
+return postArray;
+  })
+).subscribe(res=>{
+  console.log('after manipulate data',res);
+})
+
+//filter rxjs operator
+const data = from(this._firebaseservice.userss);
+data.pipe(
+  filter(u => u.gender == 'Male'),
+  toArray()
+).subscribe(res=>{
+  console.log('filter operator',res);
   
 })
 
+// Take rxjs operator
+// const sourse =interval(1000);
+// sourse.pipe(
+//   take(6)).subscribe(res =>{
+//     console.log('interval example',res);
+    
+//   })
 
+// Take last
+let randomsName = ['sandy','sachin','sagar','rahul','ramesh'];
+const sourse =from(randomsName);
+
+sourse.pipe(
+  takeLast(4)
+).subscribe(res =>{
+  console.log('take last operator:',res);
+  
+})
 
 
 
@@ -60,6 +115,7 @@ this._firebaseservice.getPostDataFirebase().subscribe(res=>{
   //   }, 3000);
    
 //patchvalue
+
 // setTimeout(() => {
 //   this.myRectiveForm.patchValue({
 //     'userdetails':{
@@ -160,3 +216,7 @@ setTimeout(() => {
   return myResponse;
 }
 }
+function form(users: any[]) {
+  throw new Error('Function not implemented.');
+}
+

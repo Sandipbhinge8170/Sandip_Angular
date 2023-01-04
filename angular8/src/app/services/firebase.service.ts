@@ -7,6 +7,21 @@ import { firebasepost } from '../models/firebasepost';
 })
 export class FirebaseService {
 url='https://angualrcrud-316cb-default-rtdb.firebaseio.com/';
+
+//users array practic form rxjs library
+users:any[]=[
+  {id:'101',name:'sandip'},
+  {id :'102',name:'sagar'}
+]
+
+userss:any[]=[
+  {id:'101',name:'sandip',gender:'Male'},
+  {id :'102',name:'sagar',gender:'Male'},
+  {id :'102',name:'neha',gender:'female'},
+  {id :'102',name:'priys',gender:'female'}
+]
+
+
   constructor(private http:HttpClient) { }
 
   createPost(){
